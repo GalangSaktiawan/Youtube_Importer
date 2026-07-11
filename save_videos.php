@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/koneksi.php';
 
 applyCommonHeaders();
 
@@ -57,7 +57,7 @@ try {
 
     foreach ($videos as $video) {
         if (!is_array($video) || empty($video['video_id'])) {
-            continue; 
+            continue;
         }
 
         $statement->execute([

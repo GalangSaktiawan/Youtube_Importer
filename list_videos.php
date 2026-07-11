@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/koneksi.php';
 
 applyCommonHeaders();
 
@@ -23,8 +23,6 @@ try {
     ");
 
     $rows = $statement->fetchAll();
-
-    
     foreach ($rows as &$row) {
         if (!empty($row['raw_json'])) {
             $decoded = json_decode($row['raw_json'], true);
